@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+html, body { height: 100%; 
+   }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-repeat: no-repeat;
+    
+    background:linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('https://www.texasheart.org/wp-content/uploads/2020/03/thi-coronavirus-series-2.jpg');
+    background-size: cover; }

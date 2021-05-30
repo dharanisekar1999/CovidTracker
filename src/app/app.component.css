@@ -1,0 +1,67 @@
+.alert
+{
+    height: 7rem;
+    font-size: large;
+    font-weight: 800;
+    margin-left: 3rem;
+    
+}
+.al
+{
+    height: 9rem;
+    word-wrap: break-word;
+  
+   
+}
+.al1
+{
+    height: 6rem;
+    background-color:darkslategray;
+    color: snow;
+    font-weight: 500;
+    
+}
+mat-card
+{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    
+}
+mat-card-header
+{
+    justify-content: center;
+    font-size: large;
+    font-weight: 500;
+    margin-right: 2rem;
+    color: cornsilk;
+    word-break: break-all;
+}
+mat-card-content
+{
+    font-size: large;
+    justify-content: center;
+    margin-top: 1.5rem;
+    font-weight: 700;
+   color: cornsilk;
+   letter-spacing: 0.06rem;
+   word-break: break-all;
+}
+.container
+{
+    padding-top: 1.5rem;
+}
+
+
+.blinking{
+    animation:blinkingText 1.5s infinite;
+    font-size: x-large;
+    font-weight: 600;
+   
+}
+@keyframes blinkingText{
+    0%{     color: rgb(238, 16, 16);    }
+    49%{    color: rgb(255, 37, 37); }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: rgb(255, 37, 37);    }
+}

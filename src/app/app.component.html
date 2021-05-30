@@ -1,0 +1,134 @@
+<div class="container mt-2">
+  
+    <marquee behavior="scroll" direction="left" style="font-size:large;color: cornsilk; font-weight: 800;text-shadow: 2px 2px #0a0a0a;">Wear Mask!!&nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; Stay Home Stay Safe!!&nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; Keep social distancing&nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; Wash your hands regulary&nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; Avoid Crowd
+    </marquee>
+  
+  
+
+<h1 class="text-center"><span class="badge" style="background-color: coral;">CORONA LIVE STATUS &nbsp; {{todayDate}}</span></h1>
+<div class="row" style="padding-top: 1rem;">
+ <div class="col-lg-2">
+    <div class="alert alert-primary al" role="alert">
+      Total Cases <br><br>{{W_cases}}
+    </div>
+</div>
+<div class="col-lg-2">
+  <div class="alert alert-dark al" role="alert">
+    Deaths <br><br>{{W_deaths}}
+  </div>
+</div>
+<div class="col-lg-2">
+  <div class="alert alert-danger al" role="alert">
+    Today Deaths<br><br>{{W_todayDeaths}}
+  </div>
+</div>
+<div class="col-lg-2">
+  <div class="alert alert-warning al" role="alert">
+   Active Cases<br><br> {{W_active}}
+  </div>
+</div>
+<div class="col-lg-2">
+  <div class="alert alert-success al" role="alert">
+    Today Recovered <br><br>{{  W_recovered}}
+  </div>
+</div>
+
+<div class="col-lg-2">
+  <div class="alert alert-info al" role="alert">
+    Today Cases<br><br>{{W_todayCases}}
+  </div>
+</div>
+
+
+  
+</div>
+<div class="row"style="padding-top: 1rem;">
+  <div class="col-lg-4">
+    <mat-card class="alert al1" role="alert">
+     
+        <div class="row">
+          <div class="col-6">Today's Highest Case</div>
+          <div class="col-6"> <span class="blinking">{{todayCaseCountry}}-{{todayMax}}</span></div>
+        </div>
+    </mat-card>
+  </div> 
+  <div class="col-lg-4">
+    <mat-card class="alert al1" role="alert">
+      <div class="row">
+      <div class="col-6">
+        Today's Highest Death Case
+      </div>
+      <div class="col-6">
+        <span class="blinking">{{todayDeathCountry}}-{{todayDeathMax}}</span>
+      </div>
+    </div>
+    </mat-card>
+  </div>
+  <div class="col-lg-4">
+    <mat-card class="alert al1" role="alert">
+      <div class="row">
+      <div class="col-6">
+        Highest Active Case
+      </div>
+      <div class="col-6">
+        <span class="blinking">{{activeCountry}}-{{activeMax}}</span>
+      </div>
+    </div>
+    </mat-card>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-lg-2">
+    <span class="badge" style="background-color: tomato; font-size: x-large; margin-bottom: 2rem;">Country</span>
+    </div>
+    <div class="col-lg-8">
+    <select #selected (change)="getCountry(selected.value)" class="form-select" aria-label="Default select example" style="font-size: large;margin-bottom: 2rem;background-color:gainsboro;">
+    <option selected>Select Country</option>
+      <option *ngFor="let i of countries">
+         {{i.country}}
+      </option>
+    </select>
+  </div>
+  <div class="col-lg-2">
+    <button mat-raised-button color="primary" (click)="getData()" style="font-size: x-large;height: 3rem;margin-bottom: 1rem;">Track Status<mat-icon style="margin-left: 1rem;">search</mat-icon></button>
+  </div>
+</div>
+<div class="row">
+<div class="col-12">
+  <div class="alert alert-dark text-center" style="height: fit-content;">
+    <p class="display-6 text-dark">{{country_name}}</p>
+    <div class="row">
+      <div class="col-lg-3">
+        <mat-card style="background-color:black;"><mat-card-header>DEATHS</mat-card-header><mat-card-content>{{deaths}}</mat-card-content></mat-card>
+      </div>
+      <div class="col-lg-3 ">
+        <mat-card style="background-color:dodgerblue;"><mat-card-header>CASES</mat-card-header><mat-card-content>{{cases}}</mat-card-content> </mat-card>
+      </div>
+      <div class="col-lg-3 ">
+        <mat-card style="background-color:indianred;"><mat-card-header>TODAY CASES</mat-card-header><mat-card-content>{{todayCases}}</mat-card-content></mat-card>
+      </div>
+      <div class="col-lg-3">
+        <mat-card style="background-color: darkslategrey;"><mat-card-header>TODAY DEATHS</mat-card-header><mat-card-content>{{todayDeaths}}</mat-card-content></mat-card>
+    </div>
+  </div>
+    <div class="row">
+      <div class="col-lg-3">
+        <mat-card style="background-color:limegreen;"><mat-card-header>RECOVERED</mat-card-header><mat-card-content>{{recovered}}</mat-card-content></mat-card>
+      </div>
+      <div class="col-lg-3">
+        <mat-card style="background-color: royalblue;"><mat-card-header>ACTIVE</mat-card-header><mat-card-content>{{active}}</mat-card-content></mat-card>
+      </div>
+      <div class="col-lg-3">
+        <mat-card style="background-color:orangered;"> <mat-card-header>CRITICAL</mat-card-header><mat-card-content>{{critical}}</mat-card-content></mat-card>
+      </div>
+      <div class="col-lg-3">
+        <mat-card style="background-color:lightseagreen;"><mat-card-header>TOTAL TESTS</mat-card-header><mat-card-content>{{totalTests}}</mat-card-content>
+          </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+</div> 
+</div>
+
